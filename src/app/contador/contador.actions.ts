@@ -1,34 +1,35 @@
 import { Action } from '@ngrx/store';
 
-
-export const INCREMENTAR = '[Contador] Incrementar';
-export const DECREMENTAR = '[Contador] Decrementar';
-export const MULTIPLICAR = '[Contador] Multiplicar';
-export const DIVIDIR = '[Contador] Dividir';
-export const RESET = '[Contador] Reset';
+export enum CounterActionType {
+    INCREMENTAR = '[Contador] Incrementar',
+    DECREMENTAR = '[Contador] Decrementar',
+    MULTIPLICAR = '[Contador] Multiplicar',
+    DIVIDIR = '[Contador] Dividir',
+    RESET = '[Contador] Reset'
+}
 
 export class IncrementarAction implements Action {
-    readonly type = INCREMENTAR;
+    readonly type = CounterActionType.INCREMENTAR;
 }
 
 export class DecrementarAction implements Action {
-    readonly type = DECREMENTAR;
+    readonly type = CounterActionType.DECREMENTAR;
 }
 
 export class MultiplicarAction implements Action {
-    readonly type = MULTIPLICAR;
+    readonly type = CounterActionType.MULTIPLICAR;
 
     constructor( public payload: number) {}
 }
 
 export class DividirAction implements Action {
-    readonly type = DIVIDIR;
+    readonly type = CounterActionType.DIVIDIR;
 
     constructor( public payload: number) {}
 }
 
 export class ResetAction implements Action {
-    readonly type = RESET;
+    readonly type = CounterActionType.RESET;
 }
 
 export type actions =   IncrementarAction   |
